@@ -159,8 +159,8 @@
 </div>
 <div id="menu">
   <div class="panel">
-    <h1>DiddyShot v2</h1>
-    <div class="sub">Smooth Operation · Diddy party</div>
+    <h1>DiddyShot</h1>
+    <div class="sub">Tactical Operative · Sector 7</div>
     <div class="controls">
       <div><b>WASD</b> Move</div>
       <div><b>MOUSE</b> Look</div>
@@ -176,7 +176,7 @@
 </div>
 <div id="deathScreen">
   <h2>YOU DIED</h2>
-  <p>get better broski…</p>
+  <p>Reinforcements en route…</p>
   <button id="respawnBtn">REDEPLOY</button>
 </div>
 
@@ -190,7 +190,7 @@
 <script>
 "use strict";
 // =============================================================================
-// didyshit — Babylon.js FPS  (single file, overhauled build)
+// NIGHTFALL — Babylon.js FPS  (single file, overhauled build)
 // =============================================================================
 const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (window.matchMedia && matchMedia('(pointer:coarse)').matches);
 const $ = (id) => document.getElementById(id);
@@ -1133,7 +1133,7 @@ function setupViewmodels() {
 async function loadAKModel() {
   if (!BABYLON.SceneLoader) return false;
   try {
-    const result = await BABYLON.SceneLoader.ImportMeshAsync("", "./", "gun.glb", scene);
+    const result = await BABYLON.SceneLoader.ImportMeshAsync("", "./", "ak47.glb", scene);
     const root = new BABYLON.TransformNode("vm_ak", scene);
     // Re-parent imported meshes under our root
     result.meshes.forEach(m => {
@@ -2026,7 +2026,7 @@ async function boot() {
   renderPipe = setupRendering();
   buildPlayerBody();
   spawnWave();
-  $('loading').textContent = "Loading Gun…";
+  $('loading').textContent = "Loading AK-12…";
   await loadAKModel();
   $('loading').textContent = "Ready.";
   $('startBtn').disabled = false;
@@ -2059,4 +2059,3 @@ window.addEventListener("resize", () => engine.resize());
 </script>
 </body>
 </html>
-
